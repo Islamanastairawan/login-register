@@ -9,12 +9,21 @@ let customEncryption = null;
 // Inisialisasi enkripsi dengan kunci rahasia
 async function loadKeys() {
   try {
-    const response = await fetch("key.json");
-    encryptionKeys = await response.json();
-    // Inisialisasi enkripsi dengan kunci dari file
+    encryptionKeys = {
+      encryptionKey: process.env.PUBLIC_ENCRYPTION_KEY,
+      fileStorageKey: process.env.PUBLIC_FILE_STORAGE_KEY
+    };
+
+    // Validasi untuk memastikan kunci berhasil dimuat
+    if (!encryptionKeys.encryptionKey || !encryptionKeys.fileStorageKey) {
+      throw new Error("Encryption keys are missing from environment variables.");
+    }
+
+    // Inisialisasi enkripsi dengan kunci dari environment variable
     customEncryption = new encryption(encryptionKeys.encryptionKey);
+    
   } catch (error) {
-    console.error("Failed to load encryption keys:", error);
+    console.error("Failed to load encryption keys from environment variables:", error);
   }
 }
 
