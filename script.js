@@ -10,8 +10,8 @@ let customEncryption = null;
 async function loadKeys() {
   try {
     encryptionKeys = {
-      encryptionKey: process.env.PUBLIC_ENCRYPTION_KEY,
-      fileStorageKey: process.env.PUBLIC_FILE_STORAGE_KEY
+      encryptionKey: import.meta.env.VITE_ENCRYPTION_KEY,
+      fileStorageKey: import.meta.env.VITE_FILE_STORAGE_KEY
     };
 
     // Validasi untuk memastikan kunci berhasil dimuat
