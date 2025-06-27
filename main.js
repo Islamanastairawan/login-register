@@ -1,2 +1,2 @@
-import './encryption.js';
+import './style.css';
 import './script.js';

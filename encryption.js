@@ -1,4 +1,4 @@
-class encryption {
+export default class encryption {
     constructor(key) {
         this.key = key;
     }

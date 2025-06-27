@@ -1,3 +1,5 @@
+import encryption from './encryption.js';
+
 // Variabel Global
 let users = [];
 let currentUser = null;
