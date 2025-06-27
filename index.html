@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <div id="loginPage" class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2><i class="fas fa-user"></i> Masuk</h2>
+                <p>Silahkan masuk ke akun Anda</p>
+            </div>
+
+        <div id="loginAlert"></div>
+
+        <form id="loginForm">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" placeholder="Email" required>
+                <label for="loginEmail">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                <label for="loginPassword">Password</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+        </form>
+
+        <div class="text-center">
+            <p>Belum punya akun? <a href="#" class="btn-link" id="showRegister">Daftar sekarang</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Register Form -->
+<div id="registerPage" class="auth-container hidden">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2><i class="fas fa-user-plus"></i> Daftar</h2>
+            <p>Silahkan daftar untuk membuat akun baru</p>
+        </div>
+
+        <div id="registerAlert"></div>
+        <form id="registerForm">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="registerName" placeholder="Nama Lengkap" required>
+                <label for="registerName">Nama Lengkap</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="registerEmail" placeholder="Email" required>
+                <label for="registerEmail">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="registerPassword" placeholder="Password" required>
+                <label for="registerPassword">Password</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Konfirmasi Password" required>
+                <label for="confirmPassword">Konfirmasi Password</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100"><i class="fas fa-user-plus"></i> Daftar</button>
+        </form>
+
+        <div class="text-center">
+            <p>Sudah punya akun? <a href="#" class="btn-link" id="showLogin">Masuk sekarang</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- OTP Verification -->
+<div id="otpPage" class="auth-container hidden">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2><i class="fas fa-shield-alt"></i> Verifikasi OTP</h2>
+            <p>Masukkan kode OTP yang telah dikirimkan ke email Anda</p>
+        </div>
+
+        <div id="otpAlert"></div>
+
+        <form id="otpForm">
+            <div class="otp-inputs">
+                <input type="text" class="otp-input" maxlength="1" required>
+                <input type="text" class="otp-input" maxlength="1" required>
+                <input type="text" class="otp-input" maxlength="1" required>
+                <input type="text" class="otp-input" maxlength="1" required>
+                <input type="text" class="otp-input" maxlength="1" required>
+                <input type="text" class="otp-input" maxlength="1" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100"><i class="fas fa-check"></i> Verifikasi</button>
+        </form>
+
+        <div class="text-center">
+            <p>Belum menerima kode? <a href="#" class="btn-link" id="resendOTP">Kirim ulang</a></p>
+            <p><a href="#" class="btn-link" id="backToAuth">Kembali</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboardPage" class="container hidden">
+    <div class="dashboard-container">
+        <div class="text-center">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h2 id="welcomeUser">Selamat Datang!</h2>
+            <p class="text-muted">Anda telah berhasil masuk ke dashboard.</p>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-user-circle"></i> Profile</h5>
+                        <p class="card-text">Kelola Informasi Profil Anda</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-cog"></i> Pengaturan</h5>
+                        <p class="card-text">Ubah Pengaturan Akun Anda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-danger" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Keluar
+            </button>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="encryption.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

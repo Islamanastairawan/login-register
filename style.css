@@ -1,0 +1,288 @@
+:root {
+  /* Light theme variables */
+    --background-light: #f5f5f5;
+    --card-bg-light: #ffffff;
+    --text-light: #333333;
+    --text-muted-light: #6c757d;
+    --blue-primary: #1a73e8;
+    --blue-hover: #1557b0;
+    --input-text: #333333;
+    --input-background: #ffffff;
+    --input-border: #ddd;
+    --label-color: #495057;
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+    --background-light: #1a1a1a;
+    --card-bg-light: #2d2d2d;
+    --text-light: #ffffff;
+    --text-muted-light: #bababa;
+    --input-text: #ffffff;
+    --input-background: #3d3d3d;
+    --input-border: #404040;
+    --label-color: #e0e0e0;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--blue-primary);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: var(--blue-hover);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* Authentication Container */
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Authentication Card */
+.auth-card {
+  background: var(--card-bg-light);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Authentication Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h2 {
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.auth-header p {
+  color: #666;
+  margin: 0;
+}
+
+/* Form Styles */
+.form-floating > label {
+  margin-bottom: 20px;
+  color: var(--label-color);
+}
+
+.text-muted {
+    color: var(--text-muted-light) !important;
+}
+
+.form-control {
+  background: var(--input-background);
+  border-color: var( --blue-primary);
+  color: var(--input-text);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--blue-primary);
+  /* background-color: var(--input-background); */
+  color: var(--input-text); 
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--blue-primary);
+  border-color: var(--blue-primary);
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-hover);
+  border-color: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-link {
+  color: var(--blue-primary);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: var(--blue-hover);
+  text-decoration: underline;
+}
+
+.auth-card, .dashboard-container, .card{
+    background: var(--card-bg-light);
+    color: var(--text-light);
+}
+
+.card-title, .card-text {
+    color: var(--text-light);
+}
+
+/* Alert Styles */
+.alert {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--input-border);
+}
+
+/* OTP Input Styles */
+.otp-inputs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: var(--input-background);
+  border: 2px solid var(--input-border);
+  color: var(--input-text);
+}
+
+.otp-input:focus {
+  border-color: var(--blue-primary);
+  background-color: var(--input-background);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+  outline: none;
+}
+
+.auth-header h2,
+.auth-header p {
+    color: var(--text-light);
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  background: var(--card-bg-light);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+.user-avatar {
+  font-size: 64px;
+  color: var(--blue-primary);
+  margin-bottom: 20px;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .auth-container {
+    padding: 10px;
+  }
+
+  .auth-card {
+    padding: 20px;
+  }
+
+  .otp-input {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+/* Animation Enhancement */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-card,
+.dashboard-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Card Hover Effects */
+.card {
+  background: var(--card-bg-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner (untuk future enhancement) */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
